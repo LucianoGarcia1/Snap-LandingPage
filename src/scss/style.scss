@@ -1,0 +1,306 @@
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+//HEADER
+
+.header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    @include flex;
+    padding: 0px 30px;
+
+
+    .navegacao{
+        @include flex;
+        min-width: 45%;
+
+        .btnMenu{
+            display: none;
+            background-color: transparent;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .nav{
+            ul{
+                list-style: none;
+                @include flex;
+                justify-content: center;
+                gap: 2em;
+
+                .drop{
+                    @include flex;
+                    justify-content: center;
+                    flex-direction: column;
+
+                    .down{
+                        transition: .5s;
+                    }
+                    .up{
+                        transform: rotate(180deg)
+                    }
+
+                    div{
+                        background-color: $AlmostWhite;
+                        position: absolute;
+                        top: 100px;
+                        padding: 30px;
+                        border-radius: 20px;
+                        box-shadow: 0px 0px 5px 0px $MediumGray;
+                        transition: .5s linear;
+                        display: none;
+                        height: 0px;
+
+                        &#features{
+                            left: 100px;
+                            min-width: 210px;
+                        }
+
+                        &#company{
+                            min-width: 140px;
+                            left: 340px;
+                        }
+
+                        &.active{
+                            height: auto;
+                            display: block;
+                        }
+
+
+                        ul{
+                            @include flex;
+                            align-items: flex-start;
+                            justify-content: center;
+                            flex-direction: column;
+
+                            li{
+
+                                img{
+                                    width: 20px;
+                                    height: 20px;
+                                }
+                                color: $MediumGray;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 1em;
+                            }
+                        }
+                    }
+                }
+
+                a{
+                    color: $MediumGray;
+                    text-decoration: none;
+                    font-weight: 600;
+
+                    display: flex;
+                    align-items: center;
+                    gap: 1em;
+                    transition: .5s;
+
+                    &:hover{
+                        color: $AlmostBlack;
+                    }
+                }
+            }
+        }
+    }
+
+    .auth{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+
+        button{
+            font-size: 1em;
+            font-weight: 600;
+            color: $MediumGray;
+            cursor: pointer;
+            background-color: transparent;
+            transition: .5s;
+        }
+
+        #login{
+            border: transparent;
+            
+            &:hover{
+                color: $AlmostBlack;
+            }
+        }
+
+        #register{
+            border: 1px solid $AlmostBlack;
+            height: 40px;
+            padding: 0 20px;
+            border-radius: 10px;
+
+            &:hover{
+                background-color: $AlmostBlack;
+                color: $AlmostWhite;
+            }
+        }
+    }
+}
+
+.container{
+    width: 100%;
+    height: calc(100vh - 100px);
+
+    padding: 0px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content-title{
+        width: 50%;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        flex-direction: column;
+
+        h1{
+            max-width: 100%;
+            font-size: 4em;
+            color: $AlmostBlack;
+        }
+
+        p{
+            max-width: 100%;
+            width: 420px;
+            line-height: 1.6em;
+            font-size: 1em;
+            color: $MediumGray;
+        }
+
+        .more{
+            width: 420px;
+            
+            button{
+                width: 30%;
+                background-color: $AlmostBlack;
+                color: $AlmostWhite;
+                border: none;
+                height: 45px;
+                border-radius: 10px;
+                font-size: 0.9em;
+                font-weight: 600;
+                cursor: pointer;
+                transition: .5s;
+
+                &:hover{
+                    background-color: transparent;
+                    border: 1px solid $AlmostBlack;
+                    color: $AlmostBlack;
+                }
+            }
+        }
+
+        .contributtes{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2em;
+            margin-top: 30px;
+        }
+    }
+
+    .content-img{
+        width: 50%;
+        height: 600px;
+
+        background-image: url("../../assets/img/image-hero-desktop.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+    }
+}
+
+@media screen and (max-width: 990px){
+
+    .header{
+        .navegacao{
+            width: 100%;
+
+            .btnMenu{
+                display: block;
+            }
+
+            .nav{
+                display: none;
+
+                &.active{
+                    display: block;
+                    position: absolute;
+                    top: 90px;
+                    left: 0;
+                    background-color: $AlmostWhite;
+                    width: 70%;
+                    height: 100vh;
+
+
+                     ul{
+                        align-items: flex-start;
+                        justify-content: flex-start;
+                        text-align: left;
+                        flex-direction: column;
+                        padding-left: 30px;
+                     }
+
+                     .drop{
+                        div{
+                            position: static;
+                            padding-left: 10px;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .auth{
+            display: none;
+        }
+    }
+
+    .container{
+        padding: 0px 10px;
+        flex-direction: column-reverse;
+        gap: 1em;
+
+        .content-title{
+            width: 100%;
+            min-height: auto;
+            text-align: center;
+            gap: 1em;
+
+            h1{
+                width: 100%;
+                font-size: 3em;
+            }
+            p{
+                font-size: 0.9em;
+            }
+
+            .contributtes{
+                flex-wrap: wrap;
+            }
+        }
+
+        .content-img{
+           background-image: url("/assets/img/image-hero-mobile.png");
+            background-size: contain;
+            background-position:center center;
+            width: 100%;
+            height: 600px;
+        }
+    }
+}

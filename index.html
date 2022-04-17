@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--FONT FAMILY-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>Intro section</title>
+  <link rel="stylesheet" href="src/scss/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="navegacao">
+          <img src="assets/img/logo.svg" alt="logo">
+
+          <nav class="nav">
+              <ul>
+                <li class="drop"><a href="#">Features <img src="assets/img/icon-arrow-down.svg" alt="icon-arrow-down" class="down"></a>
+                  <div id="features">
+                    <ul>
+                      <li><img src="assets/img/icon-todo.svg" alt="Todo"> Todo list</li>
+                      <li><img src="assets/img/icon-calendar.svg" alt="Calendar"> Calendar</li>
+                      <li><img src="assets/img/icon-reminders.svg" alt="Reminders"> Reminders</li>
+                      <li><img src="assets/img/icon-planning.svg" alt="Planning"> Planning</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="drop"><a href="#">Company <img src="assets/img/icon-arrow-down.svg" alt="icon-arrow-down" class="down"></a>
+                <div id="company">
+                  <ul>
+                    <li>History</li>
+                    <li>Our team</li>
+                    <li>Blog</li>
+                  </ul>
+                </div>
+              </li>
+
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">About</a></li>
+              </ul>
+
+          </nav>
+
+          <button class="btnMenu">
+            <img src="assets/img/icon-menu.svg" alt="icon-menu">
+          </button>
+        </div>
+
+        <div class="auth">
+          <button id="login">Login</button>
+          <button id="register">Register</button>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="content-title">
+          <h1>Make <br> remote work</h1>
+
+          <p> Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+
+          <div class="more">
+            <button>Learn more</button>
+          </div>
+
+          <div class="contributtes">
+            <img src="assets/img/client-databiz.svg" alt="">
+            <img src="assets/img/client-audiophile.svg" alt="">
+            <img src="assets/img/client-meet.svg" alt="">
+            <img src="assets/img/client-maker.svg" alt="">
+          </div>
+        </div>
+
+        <div class="content-img"></div>
+    </section>
+
+    <script src="src/js/dropdown.js"></script>
+    <script src="src/js/menu.js"></script>
+</body>
+</html>
